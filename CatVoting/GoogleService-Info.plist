@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>788849525330-bnp5pgsvom51b2jkmtvjdifeh35r20dh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.788849525330-bnp5pgsvom51b2jkmtvjdifeh35r20dh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAx3k4BIy1_hjl--Fq6C-dcpPtcvE5PJWI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>788849525330</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Igor2890.CatVoting</string>
+	<key>PROJECT_ID</key>
+	<string>catvoting-f8d74</string>
+	<key>STORAGE_BUCKET</key>
+	<string>catvoting-f8d74.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:788849525330:ios:acd9970753e97c0eb4958b</string>
+</dict>
+</plist>
