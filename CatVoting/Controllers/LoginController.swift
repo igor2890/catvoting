@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import KeychainSwift
 
 class LoginController: UIViewController {
 
@@ -21,6 +22,8 @@ class LoginController: UIViewController {
     
     private let gUsername = "1"
     private let gPassword = "1"
+    private let keychain = KeychainSwift()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,10 +118,16 @@ class LoginController: UIViewController {
         loginField.textColor = .white
         loginField.textAlignment = .center
         loginField.placeholder = "е-почта"
-        loginField.textContentType = .emailAddress
+        loginField.textContentType = .username
         loginField.keyboardType = .emailAddress
         loginField.autocorrectionType = .no
         loginField.clearButtonMode = .always
+        
+        keychain.synchronizable = true
+        let login = keychain.get("emailLogin")
+        if login != nil {
+            loginField.text = login
+        }
         
         
         passwordField.backgroundColor = .systemOrange
@@ -175,6 +184,10 @@ class LoginController: UIViewController {
                 }
                 return
             }
+            
+            self.keychain.set(email, forKey: "emailLogin")
+            self.keychain.set(password, forKey: "password")
+            
             guard let user = authResult?.user else { return }
             if user.isEmailVerified {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)

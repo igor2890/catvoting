@@ -7,12 +7,15 @@
 
 import UIKit
 import Firebase
+import KeychainSwift
 
 class RegisterController: UIViewController {
 
     @IBOutlet weak var loginRegField: UITextField!
     @IBOutlet weak var passwordRegField: UITextField!
     @IBOutlet weak var regButton: UIButton!
+    
+    let keychain = KeychainSwift()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +27,6 @@ class RegisterController: UIViewController {
     func hideKeyboard() {
         loginRegField.endEditing(true)
         passwordRegField.endEditing(true)
-        print(123)
     }
     
     private func configure() {
@@ -36,7 +38,7 @@ class RegisterController: UIViewController {
         loginRegField.textColor = .white
         loginRegField.textAlignment = .center
         loginRegField.placeholder = "е-почта"
-        loginRegField.textContentType = .emailAddress
+        loginRegField.textContentType = .username
         loginRegField.keyboardType = .emailAddress
         loginRegField.autocorrectionType = .no
         loginRegField.clearButtonMode = .always
@@ -73,6 +75,11 @@ class RegisterController: UIViewController {
                 self?.showAlert(title: "Ошибка", message: error!.localizedDescription, type: .alert, typeButton: .destructive)
                 return
             }
+            
+            self?.keychain.synchronizable = true
+            self?.keychain.set(email, forKey: "emailLogin")
+            self?.keychain.set(password, forKey: "password")
+            
             let alert = UIAlertController(title: "Зарегистрирован", message: "На адрес \(user.email!) направлено письмо о необходимости подтверждения регистрации", preferredStyle: .alert)
             let alertButton = UIAlertAction(title: "OK", style: .cancel) {_ in
                 user.sendEmailVerification() { _ in
