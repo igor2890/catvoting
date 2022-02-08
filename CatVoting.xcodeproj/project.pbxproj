@@ -12,7 +12,16 @@
 		40377626275CFC8D00EB94DD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40377625275CFC8D00EB94DD /* Colors.swift */; };
 		40377628275CFEED00EB94DD /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40377627275CFEED00EB94DD /* LoginController.swift */; };
 		404C495D272CAACA00213C7A /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 404C495C272CAACA00213C7A /* Nuke */; };
-		40C9DB8727612810000713D3 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C9DB8627612810000713D3 /* RegisterController.swift */; };
+		40C9DB8727612810000713D3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C9DB8627612810000713D3 /* RegisterViewController.swift */; };
+		40D5BACB27B258740013B515 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5BACA27B258740013B515 /* RegisterInteractor.swift */; };
+		40D5BACD27B258870013B515 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5BACC27B258870013B515 /* RegisterPresenter.swift */; };
+		40D5BACF27B2589D0013B515 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5BACE27B2589D0013B515 /* RegisterRouter.swift */; };
+		40D5BAD127B258AF0013B515 /* RegisterConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5BAD027B258AF0013B515 /* RegisterConfigurator.swift */; };
+		40D5BAD327B259030013B515 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5BAD227B259030013B515 /* RegisterProtocols.swift */; };
+		40D5BAD627B2C2A20013B515 /* AuthErrorCode+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5BAD527B2C2A20013B515 /* AuthErrorCode+Ext.swift */; };
+		40D5BAD927B2C46F0013B515 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5BAD827B2C46F0013B515 /* AuthServiceProtocol.swift */; };
+		40D5BADB27B2C4E70013B515 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5BADA27B2C4E70013B515 /* FirebaseAuthService.swift */; };
+		40D5BADD27B302370013B515 /* CustomStringError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5BADC27B302370013B515 /* CustomStringError.swift */; };
 		780E234627076C0A00052ABE /* CatTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780E234527076C0A00052ABE /* CatTableVC.swift */; };
 		780E235527077B3600052ABE /* DescriptionCatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780E235327077B3600052ABE /* DescriptionCatCell.swift */; };
 		780E235627077B3600052ABE /* DescriptionCatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 780E235427077B3600052ABE /* DescriptionCatCell.xib */; };
@@ -49,7 +58,16 @@
 		402A1433275FEF2200D42DFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		40377625275CFC8D00EB94DD /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		40377627275CFEED00EB94DD /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		40C9DB8627612810000713D3 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		40C9DB8627612810000713D3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		40D5BACA27B258740013B515 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		40D5BACC27B258870013B515 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		40D5BACE27B2589D0013B515 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		40D5BAD027B258AF0013B515 /* RegisterConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterConfigurator.swift; sourceTree = "<group>"; };
+		40D5BAD227B259030013B515 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
+		40D5BAD527B2C2A20013B515 /* AuthErrorCode+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthErrorCode+Ext.swift"; sourceTree = "<group>"; };
+		40D5BAD827B2C46F0013B515 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
+		40D5BADA27B2C4E70013B515 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		40D5BADC27B302370013B515 /* CustomStringError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStringError.swift; sourceTree = "<group>"; };
 		780E234527076C0A00052ABE /* CatTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTableVC.swift; sourceTree = "<group>"; };
 		780E235327077B3600052ABE /* DescriptionCatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCatCell.swift; sourceTree = "<group>"; };
 		780E235427077B3600052ABE /* DescriptionCatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionCatCell.xib; sourceTree = "<group>"; };
@@ -121,6 +139,46 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
+		40D5BAC827B2583A0013B515 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				40D5BAC927B2584F0013B515 /* Register */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		40D5BAC927B2584F0013B515 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				40D5BAD027B258AF0013B515 /* RegisterConfigurator.swift */,
+				40C9DB8627612810000713D3 /* RegisterViewController.swift */,
+				40D5BACA27B258740013B515 /* RegisterInteractor.swift */,
+				40D5BACC27B258870013B515 /* RegisterPresenter.swift */,
+				40D5BACE27B2589D0013B515 /* RegisterRouter.swift */,
+				40D5BAD227B259030013B515 /* RegisterProtocols.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		40D5BAD427B2C25D0013B515 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				40D5BAD727B2C4480013B515 /* AuthService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		40D5BAD727B2C4480013B515 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				40D5BADA27B2C4E70013B515 /* FirebaseAuthService.swift */,
+				40D5BAD527B2C2A20013B515 /* AuthErrorCode+Ext.swift */,
+				40D5BADC27B302370013B515 /* CustomStringError.swift */,
+				40D5BAD827B2C46F0013B515 /* AuthServiceProtocol.swift */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
 		7865681E26FCE21500C6D593 = {
 			isa = PBXGroup;
 			children = (
@@ -142,11 +200,13 @@
 		7865682926FCE21500C6D593 /* CatVoting */ = {
 			isa = PBXGroup;
 			children = (
+				40D5BAD427B2C25D0013B515 /* Services */,
+				40D5BAC827B2583A0013B515 /* Modules */,
 				40377624275CFC7900EB94DD /* Global */,
-				7865684526FE565D00C6D593 /* Models */,
+				7865684526FE565D00C6D593 /* Entity */,
 				7865684626FE583600C6D593 /* DemoData */,
 				7865685E26FF7E9F00C6D593 /* Protocol */,
-				7865684D26FE612500C6D593 /* Reuse */,
+				7865684D26FE612500C6D593 /* View */,
 				7865684C26FE60AC00C6D593 /* Controllers */,
 				7865682A26FCE21500C6D593 /* AppDelegate.swift */,
 				7865682C26FCE21500C6D593 /* SceneDelegate.swift */,
@@ -159,14 +219,14 @@
 			path = CatVoting;
 			sourceTree = "<group>";
 		};
-		7865684526FE565D00C6D593 /* Models */ = {
+		7865684526FE565D00C6D593 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				7865683E26FE544200C6D593 /* Election.swift */,
 				7865684026FE550D00C6D593 /* Cat.swift */,
 				7865684226FE556A00C6D593 /* Party.swift */,
 			);
-			path = Models;
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		7865684626FE583600C6D593 /* DemoData */ = {
@@ -181,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				40377627275CFEED00EB94DD /* LoginController.swift */,
-				40C9DB8627612810000713D3 /* RegisterController.swift */,
 				7865682E26FCE21500C6D593 /* MainController.swift */,
 				7865684926FE608500C6D593 /* CatsTableVC.swift */,
 				7865685826FE8BFF00C6D593 /* VotingTableCV.swift */,
@@ -191,7 +250,7 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		7865684D26FE612500C6D593 /* Reuse */ = {
+		7865684D26FE612500C6D593 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				7865684E26FE615D00C6D593 /* CatCell.swift */,
@@ -207,7 +266,7 @@
 				780E235327077B3600052ABE /* DescriptionCatCell.swift */,
 				780E235427077B3600052ABE /* DescriptionCatCell.xib */,
 			);
-			path = Reuse;
+			path = View;
 			sourceTree = "<group>";
 		};
 		7865685E26FF7E9F00C6D593 /* Protocol */ = {
@@ -349,12 +408,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7865684A26FE608500C6D593 /* CatsTableVC.swift in Sources */,
+				40D5BAD927B2C46F0013B515 /* AuthServiceProtocol.swift in Sources */,
 				40377626275CFC8D00EB94DD /* Colors.swift in Sources */,
 				7865683F26FE544200C6D593 /* Election.swift in Sources */,
 				7865685926FE8BFF00C6D593 /* VotingTableCV.swift in Sources */,
+				40D5BADD27B302370013B515 /* CustomStringError.swift in Sources */,
 				7865682F26FCE21500C6D593 /* MainController.swift in Sources */,
+				40D5BACF27B2589D0013B515 /* RegisterRouter.swift in Sources */,
 				7865685326FE703600C6D593 /* FeedbackFormVC.swift in Sources */,
 				7865684826FE584E00C6D593 /* DemoData.swift in Sources */,
+				40D5BAD127B258AF0013B515 /* RegisterConfigurator.swift in Sources */,
 				7865686226FF7EE300C6D593 /* DelegateProtocol.swift in Sources */,
 				7865684126FE550D00C6D593 /* Cat.swift in Sources */,
 				780E235927077B6F00052ABE /* FotoCatCell.swift in Sources */,
@@ -365,9 +428,14 @@
 				7865685626FE830D00C6D593 /* VotingCatCell.swift in Sources */,
 				7865682B26FCE21500C6D593 /* AppDelegate.swift in Sources */,
 				7865685026FE615D00C6D593 /* CatCell.swift in Sources */,
-				40C9DB8727612810000713D3 /* RegisterController.swift in Sources */,
+				40D5BACD27B258870013B515 /* RegisterPresenter.swift in Sources */,
+				40D5BAD627B2C2A20013B515 /* AuthErrorCode+Ext.swift in Sources */,
+				40C9DB8727612810000713D3 /* RegisterViewController.swift in Sources */,
 				7865684326FE556A00C6D593 /* Party.swift in Sources */,
+				40D5BADB27B2C4E70013B515 /* FirebaseAuthService.swift in Sources */,
+				40D5BACB27B258740013B515 /* RegisterInteractor.swift in Sources */,
 				780E234627076C0A00052ABE /* CatTableVC.swift in Sources */,
+				40D5BAD327B259030013B515 /* RegisterProtocols.swift in Sources */,
 				7865682D26FCE21500C6D593 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

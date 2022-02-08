@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W6g-5Z-pxs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W6g-5Z-pxs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -260,7 +260,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="T0c-1w-Kpq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personalCatCell" id="T0c-1w-Kpq">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T0c-1w-Kpq" id="Drh-dv-Iyo">
@@ -519,10 +519,10 @@
             </objects>
             <point key="canvasLocation" x="39" y="56"/>
         </scene>
-        <!--Register Controller-->
+        <!--Register View Controller-->
         <scene sceneID="CjP-da-iww">
             <objects>
-                <viewController id="VOd-IP-gJP" customClass="RegisterController" customModule="CatVoting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VOd-IP-gJP" customClass="RegisterViewController" customModule="CatVoting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NOY-FQ-8l5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -548,12 +548,19 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNZ-3D-FtD">
+                                <rect key="frame" x="20" y="20" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rIt-GZ-LYG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ew4-wV-7tH" firstAttribute="width" secondItem="NOY-FQ-8l5" secondAttribute="width" multiplier="0.7" id="5Ge-Wo-QK1"/>
+                            <constraint firstItem="MNZ-3D-FtD" firstAttribute="top" secondItem="rIt-GZ-LYG" secondAttribute="top" constant="20" id="5I9-Nv-U0q"/>
                             <constraint firstItem="V6V-vl-6jO" firstAttribute="centerX" secondItem="NOY-FQ-8l5" secondAttribute="centerX" id="D45-Cs-eyw"/>
+                            <constraint firstItem="MNZ-3D-FtD" firstAttribute="leading" secondItem="rIt-GZ-LYG" secondAttribute="leading" constant="20" id="ITd-YR-6Qp"/>
                             <constraint firstItem="Ew4-wV-7tH" firstAttribute="centerX" secondItem="NOY-FQ-8l5" secondAttribute="centerX" id="JCI-lx-JhO"/>
                             <constraint firstItem="DJD-51-Ysx" firstAttribute="centerX" secondItem="NOY-FQ-8l5" secondAttribute="centerX" id="PAz-Jc-fvW"/>
                             <constraint firstItem="Ew4-wV-7tH" firstAttribute="top" secondItem="DJD-51-Ysx" secondAttribute="bottom" constant="21" id="USz-0o-8bV"/>
@@ -564,6 +571,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="haQ-xi-eOG"/>
                     <connections>
+                        <outlet property="closeButton" destination="MNZ-3D-FtD" id="imJ-KG-Rtl"/>
                         <outlet property="loginRegField" destination="DJD-51-Ysx" id="TC5-2u-FqN"/>
                         <outlet property="passwordRegField" destination="Ew4-wV-7tH" id="2aZ-oh-Qfc"/>
                         <outlet property="regButton" destination="V6V-vl-6jO" id="uBG-AN-GFI"/>
@@ -575,7 +583,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iLH-rr-2N8"/>
+        <segue reference="aH7-Vj-89n"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
