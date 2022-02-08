@@ -33,7 +33,7 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
     }
     
     private func configureSubViews() {
-        loginRegField.backgroundColor = .systemOrange
+        loginRegField.backgroundColor = orangeCatColor
         loginRegField.isOpaque = true
         loginRegField.layer.cornerRadius = 25.0
         loginRegField.clipsToBounds = true
@@ -47,7 +47,7 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
         loginRegField.clearButtonMode = .always
         
         
-        passwordRegField.backgroundColor = .systemOrange
+        passwordRegField.backgroundColor = orangeCatColor
         passwordRegField.isOpaque = true
         passwordRegField.layer.cornerRadius = 25.0
         passwordRegField.clipsToBounds = true
@@ -61,7 +61,7 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
         passwordRegField.clearButtonMode = .always
         
         regButton.setTitle("Зарегистрироваться", for: [])
-        regButton.tintColor = .systemGray
+        regButton.tintColor = grayCatColor
         regButton.titleLabel?.font = UIFont(name: "GillSans-SemiBold", size: 18.0)
         regButton.addTarget(nil, action: #selector(tapRegister), for: .touchUpInside)
         

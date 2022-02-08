@@ -108,9 +108,9 @@ class LoginController: UIViewController {
         
         mainLabel.text = "ДЛЯ ТЕХ, КТО\nХОЧЕТ ПРАВИТЬ\nМИРОМ И ХОЗЯИНОМ"
         mainLabel.font = UIFont(name: "GillSans-SemiBold", size: 27.0)
-        mainLabel.textColor = .systemGray
+        mainLabel.textColor = grayCatColor
         
-        loginField.backgroundColor = .systemOrange
+        loginField.backgroundColor = orangeCatColor
         loginField.isOpaque = true
         loginField.layer.cornerRadius = 25.0
         loginField.clipsToBounds = true
@@ -130,7 +130,7 @@ class LoginController: UIViewController {
         }
         
         
-        passwordField.backgroundColor = .systemOrange
+        passwordField.backgroundColor = orangeCatColor
         passwordField.isOpaque = true
         passwordField.layer.cornerRadius = 25.0
         passwordField.clipsToBounds = true
@@ -153,7 +153,7 @@ class LoginController: UIViewController {
         
         registerButton.setTitle("Зарегистрироваться", for: [])
         registerButton.titleLabel?.font = UIFont(name: "GillSans-SemiBold", size: 16.0)
-        registerButton.tintColor = .systemGray
+        registerButton.tintColor = grayCatColor
         registerButton.addTarget(nil, action: #selector(didRegister), for: .touchUpInside)
     }
     
