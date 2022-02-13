@@ -13,6 +13,8 @@ class RegisterPresenter: RegisterPresenterProtocol{
     var interactor: RegisterInteractorProtocol!
     var router: RegisterRouterProtocol!
     
+    private lazy var registerState: RegistrationStateProtocol = FailRegistrationState(with: self)
+    
     init(with viewController: RegisterViewControllerProtocol){
         self.viewController = viewController
     }
@@ -38,12 +40,18 @@ class RegisterPresenter: RegisterPresenterProtocol{
         viewController.showActivityIndicator(true)
     }
     
+    func okTapped(){
+        registerState.makeSomethingTapOK()
+    }
+    
     func registerFails(message: String) {
+        registerState = FailRegistrationState(with: self)
         viewController.showOKAlert(title: "Ошибка", message: message)
         viewController.showActivityIndicator(false)
     }
     
     func registerSuccessed() {
+        registerState = SuccessRegistrationState(with: self)
         viewController.showOKAlert(
             title: "Зарегистрирован",
             message: "На указанный адрес электронной почты отправлено письмо о необходимости подтверждения регистрации")

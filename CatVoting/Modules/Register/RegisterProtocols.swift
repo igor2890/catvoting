@@ -38,6 +38,7 @@ protocol RegisterPresenterProtocol: AnyObject{
     func configureView()
     func closeViewTapped()
     func registerTapped(email: String?, password: String?)
+    func okTapped()
     func registerFails(message: String)
     func registerSuccessed()
     

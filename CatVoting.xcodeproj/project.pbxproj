@@ -14,6 +14,10 @@
 		401B1B3E27B6EF070006BFCE /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B1B3D27B6EF070006BFCE /* LoginProtocols.swift */; };
 		401B1B4327B90CE40006BFCE /* PrivateServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B1B4227B90CE40006BFCE /* PrivateServiceProtocol.swift */; };
 		401B1B4527B90D6E0006BFCE /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B1B4427B90D6E0006BFCE /* KeychainService.swift */; };
+		401B1B4927B94D830006BFCE /* RegistrationStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B1B4827B94D830006BFCE /* RegistrationStateProtocol.swift */; };
+		401B1B4B27B94D940006BFCE /* RegistrationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B1B4A27B94D940006BFCE /* RegistrationState.swift */; };
+		401B1B4D27B94DB00006BFCE /* FailRegistrationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B1B4C27B94DB00006BFCE /* FailRegistrationState.swift */; };
+		401B1B4F27B94DC10006BFCE /* SuccessRegistrationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B1B4E27B94DC10006BFCE /* SuccessRegistrationState.swift */; };
 		401CBD8627665C26009786A4 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 401CBD8527665C26009786A4 /* KeychainSwift */; };
 		402A1434275FEF2200D42DFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 402A1433275FEF2200D42DFA /* GoogleService-Info.plist */; };
 		40377626275CFC8D00EB94DD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40377625275CFC8D00EB94DD /* Colors.swift */; };
@@ -69,6 +73,10 @@
 		401B1B3D27B6EF070006BFCE /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		401B1B4227B90CE40006BFCE /* PrivateServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateServiceProtocol.swift; sourceTree = "<group>"; };
 		401B1B4427B90D6E0006BFCE /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		401B1B4827B94D830006BFCE /* RegistrationStateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationStateProtocol.swift; sourceTree = "<group>"; };
+		401B1B4A27B94D940006BFCE /* RegistrationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationState.swift; sourceTree = "<group>"; };
+		401B1B4C27B94DB00006BFCE /* FailRegistrationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailRegistrationState.swift; sourceTree = "<group>"; };
+		401B1B4E27B94DC10006BFCE /* SuccessRegistrationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessRegistrationState.swift; sourceTree = "<group>"; };
 		402A1433275FEF2200D42DFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		40377625275CFC8D00EB94DD /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		40377627275CFEED00EB94DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +175,17 @@
 			path = PrivateService;
 			sourceTree = "<group>";
 		};
+		401B1B4727B94D400006BFCE /* RegistrationState */ = {
+			isa = PBXGroup;
+			children = (
+				401B1B4A27B94D940006BFCE /* RegistrationState.swift */,
+				401B1B4C27B94DB00006BFCE /* FailRegistrationState.swift */,
+				401B1B4E27B94DC10006BFCE /* SuccessRegistrationState.swift */,
+				401B1B4827B94D830006BFCE /* RegistrationStateProtocol.swift */,
+			);
+			path = RegistrationState;
+			sourceTree = "<group>";
+		};
 		40377624275CFC7900EB94DD /* Global */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +206,7 @@
 		40D5BAC927B2584F0013B515 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				401B1B4727B94D400006BFCE /* RegistrationState */,
 				40D5BAD027B258AF0013B515 /* RegisterConfigurator.swift */,
 				40C9DB8627612810000713D3 /* RegisterViewController.swift */,
 				40D5BACA27B258740013B515 /* RegisterInteractor.swift */,
@@ -446,6 +466,7 @@
 			files = (
 				7865684A26FE608500C6D593 /* CatsTableVC.swift in Sources */,
 				401B1B3E27B6EF070006BFCE /* LoginProtocols.swift in Sources */,
+				401B1B4927B94D830006BFCE /* RegistrationStateProtocol.swift in Sources */,
 				40D5BAD927B2C46F0013B515 /* AuthServiceProtocol.swift in Sources */,
 				40377626275CFC8D00EB94DD /* Colors.swift in Sources */,
 				7865683F26FE544200C6D593 /* Election.swift in Sources */,
@@ -467,11 +488,14 @@
 				40377628275CFEED00EB94DD /* LoginViewController.swift in Sources */,
 				7865685C26FF5B1800C6D593 /* VotingButtonCell.swift in Sources */,
 				7865685626FE830D00C6D593 /* VotingCatCell.swift in Sources */,
+				401B1B4B27B94D940006BFCE /* RegistrationState.swift in Sources */,
 				7865682B26FCE21500C6D593 /* AppDelegate.swift in Sources */,
 				7865685026FE615D00C6D593 /* CatCell.swift in Sources */,
 				401B1B3627B6EEA00006BFCE /* LoginConfigurator.swift in Sources */,
 				40D5BACD27B258870013B515 /* RegisterPresenter.swift in Sources */,
 				40D5BAD627B2C2A20013B515 /* AuthErrorCode+Ext.swift in Sources */,
+				401B1B4F27B94DC10006BFCE /* SuccessRegistrationState.swift in Sources */,
+				401B1B4D27B94DB00006BFCE /* FailRegistrationState.swift in Sources */,
 				40C9DB8727612810000713D3 /* RegisterViewController.swift in Sources */,
 				7865684326FE556A00C6D593 /* Party.swift in Sources */,
 				401B1B4327B90CE40006BFCE /* PrivateServiceProtocol.swift in Sources */,

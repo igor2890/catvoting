@@ -107,7 +107,9 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
         title: String,
         message: String){
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let alertButton = UIAlertAction(title: "OK", style: .default)
+            let alertButton = UIAlertAction(title: "OK", style: .default) {_ in
+                self.presenter.okTapped()
+            }
             alert.addAction(alertButton)
             present(alert, animated: true)
     }
