@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Firebase
-import KeychainSwift
 
 class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
 
@@ -22,6 +20,7 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
+        presenter.configureView()
         configureSubViews()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
     }
@@ -38,41 +37,35 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
         loginRegField.layer.cornerRadius = 25.0
         loginRegField.clipsToBounds = true
         loginRegField.font = UIFont(name: "GillSans-SemiBold", size: 30.0)
-        loginRegField.textColor = .white
+        loginRegField.textColor = whiteCatColor
         loginRegField.textAlignment = .center
-        loginRegField.placeholder = "е-почта"
         loginRegField.textContentType = .username
         loginRegField.keyboardType = .emailAddress
         loginRegField.autocorrectionType = .no
         loginRegField.clearButtonMode = .always
-        
         
         passwordRegField.backgroundColor = orangeCatColor
         passwordRegField.isOpaque = true
         passwordRegField.layer.cornerRadius = 25.0
         passwordRegField.clipsToBounds = true
         passwordRegField.font = UIFont(name: "GillSans-SemiBold", size: 30.0)
-        passwordRegField.textColor = .white
+        passwordRegField.textColor = whiteCatColor
         passwordRegField.textAlignment = .center
-        passwordRegField.placeholder = "пароль"
         passwordRegField.textContentType = .password
         passwordRegField.autocorrectionType = .no
         passwordRegField.isSecureTextEntry = true
         passwordRegField.clearButtonMode = .always
         
-        regButton.setTitle("Зарегистрироваться", for: [])
         regButton.tintColor = grayCatColor
         regButton.titleLabel?.font = UIFont(name: "GillSans-SemiBold", size: 18.0)
         regButton.addTarget(nil, action: #selector(tapRegister), for: .touchUpInside)
         
-        closeButton.setTitle("Закрыть", for: [])
-        closeButton.tintColor = .systemRed
+        closeButton.tintColor = redCatColor
         closeButton.titleLabel?.font = UIFont(name: "GillSans-SemiBold", size: 14.0)
         closeButton.addTarget(nil, action: #selector(tapClose), for: .touchUpInside)
     }
 
 
-    
     //MARK: RegisterViewControllerProtocol
     
     @objc
@@ -86,7 +79,23 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
     private func tapClose(){
         loginRegField.text = ""
         passwordRegField.text = ""
-        presenter.needCloseView()
+        presenter.closeViewTapped()
+    }
+    
+    func setLoginFieldPlaceholder(with text: String) {
+        loginRegField.placeholder = text
+    }
+    
+    func setPasswordFieldPlaceholder(with text: String) {
+        passwordRegField.placeholder = text
+    }
+    
+    func setRegButtonTitle(with text: String) {
+        regButton.setTitle(text, for: [])
+    }
+    
+    func setCloseButtonTitle(with text: String) {
+        closeButton.setTitle(text, for: [])
     }
     
     func showOKAlert(

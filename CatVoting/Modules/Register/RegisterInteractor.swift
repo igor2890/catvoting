@@ -11,6 +11,7 @@ import Foundation
 class RegisterInteractor: RegisterInteractorProtocol{
     weak var presenter: RegisterPresenterProtocol!
     let authService: AuthServiceProtocol = FirebaseAuthService()
+    let privateService: PrivateServiceProtocol = KeychainService()
 
     
     func register(email: String, password: String){
@@ -19,6 +20,7 @@ class RegisterInteractor: RegisterInteractorProtocol{
             guard let self = self else {return}
             switch result{
             case .success(_):
+                self.privateService.save(login: email, password: password)
                 self.presenter.registerSuccessed()
             case .failure(let error):
                 self.presenter.registerFails(message: error.description)

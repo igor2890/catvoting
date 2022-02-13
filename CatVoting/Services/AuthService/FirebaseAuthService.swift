@@ -7,14 +7,12 @@
 
 import Foundation
 import Firebase
-import KeychainSwift
 
 class FirebaseAuthService: AuthServiceProtocol{
-    let keychain = KeychainSwift()
     
     func register(email: String, password: String, completion: @escaping ((Result<String,CustomStringError>) -> Void)) {
         Auth.auth().createUser(withEmail: email, password: password) {
-            [weak self] authResult, error in
+            authResult, error in
             guard let user = authResult?.user, error == nil else {
                 let errCode = AuthErrorCode(rawValue: error!._code)
                 let errDescription = errCode?.description
@@ -22,15 +20,25 @@ class FirebaseAuthService: AuthServiceProtocol{
                 return
             }
             user.sendEmailVerification()
-            self?.keychain.synchronizable = true
-            self?.keychain.set(email, forKey: "emailLogin")
-            self?.keychain.set(password, forKey: "password")
             completion(.success(""))
         }
     }
     
-    func login(email: String, password: String) {
-        
+    func login(email: String, password: String, completion: @escaping ((Result<String,CustomStringError>) -> Void)) {
+        Auth.auth().signIn(withEmail: email, password: password) {
+            authResult, error in
+            guard error == nil else {
+                let errCode = AuthErrorCode(rawValue: error!._code)
+                let errDescription = errCode?.description
+                completion(.failure(CustomStringError(description: errDescription)))
+                return
+            }
+            completion(.success(""))
+        }
+    }
+    
+    func isAccountVerified() -> Bool? {
+        Auth.auth().currentUser?.isEmailVerified
     }
     
     func logout() {

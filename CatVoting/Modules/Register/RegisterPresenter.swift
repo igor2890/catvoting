@@ -17,7 +17,15 @@ class RegisterPresenter: RegisterPresenterProtocol{
         self.viewController = viewController
     }
     
-    func needCloseView(){
+    func configureView() {
+        viewController.setLoginFieldPlaceholder(with: "е-почта")
+        viewController.setPasswordFieldPlaceholder(with: "пароль")
+        viewController.setRegButtonTitle(with: "Зарегистрироваться")
+        viewController.setCloseButtonTitle(with: "Закрыть")
+    }
+    
+    
+    func closeViewTapped(){
         router.closeView()
     }
     

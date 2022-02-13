@@ -17,10 +17,12 @@ extension AuthErrorCode: CustomStringConvertible{
             return "Аккаунт с таким e-mail уже зарегистрирован"
         case .invalidEmail:
             return "E-mail некорректен"
-        case .operationNotAllowed:
+        case .operationNotAllowed, .userDisabled:
             return "Аккаунт отключен. Обратитесь к администратору"
         case .weakPassword:
             return "Пароль недостаточно надежен. Пароль должен быть длинее 6 символов"
+        case .wrongPassword:
+            return "Пароль не подходит. Попробуйте снова"
         default:
             return "Неизвестная ошибка"
         }

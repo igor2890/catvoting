@@ -6,10 +6,8 @@
 //
 
 import UIKit
-import Firebase
-import KeychainSwift
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, LoginViewControllerProtocol {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mainLabel: UILabel!
@@ -20,18 +18,63 @@ class LoginController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
-    private let gUsername = "1"
-    private let gPassword = "1"
-    private let keychain = KeychainSwift()
-    
+    let configurator: LoginConfiguratorProtocol = LoginConfigurator()
+    var presenter: LoginPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configurator.configure(with: self)
+        presenter.configureView()
         configureSubViews()
         scrollView.addGestureRecognizer(UITapGestureRecognizer(
                                             target: self,
                                             action: #selector(hideKeyboard)))
     }
+    
+    //MARK: LoginViewControllerProtocol
+    
+    func showOKAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertButton = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(alertButton)
+        present(alert, animated: true)
+    }
+    
+    func animateLoginButton(){
+        UIView.animate(withDuration: 0.5,
+                         delay: 0.0,
+                         options: .curveEaseIn,
+                         animations: {
+            self.loginButtonImage.transform = CGAffineTransform(rotationAngle: .pi)})
+        UIView.animate(withDuration: 0.5,
+                         delay: 0.5,
+                         options: .curveEaseOut,
+                         animations: {
+            self.loginButtonImage.transform = CGAffineTransform(rotationAngle: .pi * 2.0)})
+    }
+    
+    func setMainLabelTitle(with text: String) {
+        mainLabel.text = text
+    }
+    
+    func setLoginFieldPlaceholder(with text: String) {
+        loginField.placeholder = text
+    }
+    
+    func setLoginFieldTitle(with text: String) {
+        loginField.text = text
+    }
+    
+    func setPasswordFieldPlaceholder(with text: String) {
+        passwordField.placeholder = text
+    }
+    
+    func setRegisterButtonTitle(with text: String) {
+        registerButton.setTitle(text, for: [])
+    }
+    
+    
+    //MARK: Keyboard
     
     @objc
     func hideKeyboard() {
@@ -106,7 +149,6 @@ class LoginController: UIViewController {
     private func configureSubViews() {
         mainImageView.image = UIImage(named: "mainImage")
         
-        mainLabel.text = "ДЛЯ ТЕХ, КТО\nХОЧЕТ ПРАВИТЬ\nМИРОМ И ХОЗЯИНОМ"
         mainLabel.font = UIFont(name: "GillSans-SemiBold", size: 27.0)
         mainLabel.textColor = grayCatColor
         
@@ -115,29 +157,20 @@ class LoginController: UIViewController {
         loginField.layer.cornerRadius = 25.0
         loginField.clipsToBounds = true
         loginField.font = UIFont(name: "GillSans-SemiBold", size: 30.0)
-        loginField.textColor = .white
+        loginField.textColor = whiteCatColor
         loginField.textAlignment = .center
-        loginField.placeholder = "е-почта"
         loginField.textContentType = .username
         loginField.keyboardType = .emailAddress
         loginField.autocorrectionType = .no
         loginField.clearButtonMode = .always
-        
-        keychain.synchronizable = true
-        let login = keychain.get("emailLogin")
-        if login != nil {
-            loginField.text = login
-        }
-        
         
         passwordField.backgroundColor = orangeCatColor
         passwordField.isOpaque = true
         passwordField.layer.cornerRadius = 25.0
         passwordField.clipsToBounds = true
         passwordField.font = UIFont(name: "GillSans-SemiBold", size: 30.0)
-        passwordField.textColor = .white
+        passwordField.textColor = whiteCatColor
         passwordField.textAlignment = .center
-        passwordField.placeholder = "пароль"
         passwordField.textContentType = .password
         passwordField.autocorrectionType = .no
         passwordField.isSecureTextEntry = true
@@ -151,62 +184,22 @@ class LoginController: UIViewController {
         loginButtonImage.layer.cornerRadius = 20.0
         loginButtonImage.image = UIImage(named: "catPaw")
         
-        registerButton.setTitle("Зарегистрироваться", for: [])
         registerButton.titleLabel?.font = UIFont(name: "GillSans-SemiBold", size: 16.0)
         registerButton.tintColor = grayCatColor
         registerButton.addTarget(nil, action: #selector(didRegister), for: .touchUpInside)
     }
     
+    
     @objc
     private func didTapLogin(){
-        UIView.animate(withDuration: 0.5,
-                         delay: 0.0,
-                         options: .curveEaseIn,
-                         animations: {
-            self.loginButtonImage.transform = CGAffineTransform(rotationAngle: .pi)})
-        UIView.animate(withDuration: 0.5,
-                         delay: 0.5,
-                         options: .curveEaseOut,
-                         animations: {
-            self.loginButtonImage.transform = CGAffineTransform(rotationAngle: .pi * 2.0)})
-        
         guard let email = loginField.text,
               let password = passwordField.text
         else { return }
-        Auth.auth().signIn(withEmail: email, password: password) {
-            authResult, error in
-            guard error == nil else {
-                let alert = UIAlertController(title: "Ошибка", message: error!.localizedDescription, preferredStyle: .alert)
-                let alertButton = UIAlertAction(title: "OK", style: .default)
-                alert.addAction(alertButton)
-                self.present(alert, animated: true) {
-                    self.passwordField.text = ""
-                }
-                return
-            }
-            
-            self.keychain.set(email, forKey: "emailLogin")
-            self.keychain.set(password, forKey: "password")
-            
-            guard let user = authResult?.user else { return }
-            if user.isEmailVerified {
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)
-            } else {
-                let alert = UIAlertController(title: "Ошибка", message: "Ваш аккаунт не верифицирован. Проверьте почту.", preferredStyle: .alert)
-                let okButton = UIAlertAction(title: "OK", style: .cancel)
-                let sendButton = UIAlertAction(title: "Направить проверку снова", style: .default) {_ in
-                    user.sendEmailVerification()
-                }
-                alert.addAction(okButton)
-                alert.addAction(sendButton)
-                self.present(alert, animated: true)
-            }
-                
-        }
+        presenter.loginTapped(email: email, password: password)
     }
     
     @objc
     private func didRegister() {
-            performSegue(withIdentifier: "registerSegue", sender: nil)
+        presenter.registerTapped()
     }
 }

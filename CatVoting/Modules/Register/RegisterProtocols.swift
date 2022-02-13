@@ -14,6 +14,11 @@ protocol RegisterConfiguratorProtocol: AnyObject{
 protocol RegisterViewControllerProtocol: AnyObject{
     var presenter: RegisterPresenterProtocol! {get set}
     
+    func setLoginFieldPlaceholder(with text: String)
+    func setPasswordFieldPlaceholder(with text: String)
+    func setRegButtonTitle(with text: String)
+    func setCloseButtonTitle(with text: String)
+    
     func showOKAlert(title: String, message: String)
     func closeSelf()
 }
@@ -29,10 +34,12 @@ protocol RegisterPresenterProtocol: AnyObject{
     var interactor: RegisterInteractorProtocol! {get set}
     var router: RegisterRouterProtocol! {get set}
     
-    func needCloseView()
+    func configureView()
+    func closeViewTapped()
     func registerTapped(email: String?, password: String?)
     func registerFails(message: String)
     func registerSuccessed()
+    
 }
 
 protocol RegisterRouterProtocol: AnyObject{
