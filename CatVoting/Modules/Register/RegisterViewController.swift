@@ -13,6 +13,7 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
     @IBOutlet weak var passwordRegField: UITextField!
     @IBOutlet weak var regButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let configurator: RegisterConfiguratorProtocol = RegisterConfigurator()
     var presenter: RegisterPresenterProtocol!
@@ -96,6 +97,10 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
     
     func setCloseButtonTitle(with text: String) {
         closeButton.setTitle(text, for: [])
+    }
+    
+    func showActivityIndicator(_ isShowing: Bool){
+        isShowing ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
     }
     
     func showOKAlert(

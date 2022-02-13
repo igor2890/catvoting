@@ -19,6 +19,7 @@ protocol RegisterViewControllerProtocol: AnyObject{
     func setRegButtonTitle(with text: String)
     func setCloseButtonTitle(with text: String)
     
+    func showActivityIndicator(_ isShowing: Bool)
     func showOKAlert(title: String, message: String)
     func closeSelf()
 }

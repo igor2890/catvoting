@@ -22,6 +22,7 @@ class RegisterPresenter: RegisterPresenterProtocol{
         viewController.setPasswordFieldPlaceholder(with: "пароль")
         viewController.setRegButtonTitle(with: "Зарегистрироваться")
         viewController.setCloseButtonTitle(with: "Закрыть")
+        viewController.showActivityIndicator(false)
     }
     
     
@@ -34,16 +35,19 @@ class RegisterPresenter: RegisterPresenterProtocol{
               let password = password
         else { return }
         interactor.register(email: email, password: password)
+        viewController.showActivityIndicator(true)
     }
     
     func registerFails(message: String) {
         viewController.showOKAlert(title: "Ошибка", message: message)
+        viewController.showActivityIndicator(false)
     }
     
     func registerSuccessed() {
         viewController.showOKAlert(
             title: "Зарегистрирован",
             message: "На указанный адрес электронной почты отправлено письмо о необходимости подтверждения регистрации")
+        viewController.showActivityIndicator(false)
     }
     
 }

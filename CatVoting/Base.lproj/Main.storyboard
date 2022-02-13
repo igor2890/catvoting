@@ -553,6 +553,9 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="7Pi-XO-UO7">
+                                <rect key="frame" x="188.5" y="411" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rIt-GZ-LYG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -565,12 +568,15 @@
                             <constraint firstItem="DJD-51-Ysx" firstAttribute="centerX" secondItem="NOY-FQ-8l5" secondAttribute="centerX" id="PAz-Jc-fvW"/>
                             <constraint firstItem="Ew4-wV-7tH" firstAttribute="top" secondItem="DJD-51-Ysx" secondAttribute="bottom" constant="21" id="USz-0o-8bV"/>
                             <constraint firstItem="DJD-51-Ysx" firstAttribute="top" secondItem="rIt-GZ-LYG" secondAttribute="top" constant="113" id="fUG-KG-NCl"/>
+                            <constraint firstItem="7Pi-XO-UO7" firstAttribute="centerX" secondItem="NOY-FQ-8l5" secondAttribute="centerX" id="foW-4u-xoe"/>
                             <constraint firstItem="DJD-51-Ysx" firstAttribute="width" secondItem="NOY-FQ-8l5" secondAttribute="width" multiplier="0.7" id="pGJ-a0-5WI"/>
+                            <constraint firstItem="7Pi-XO-UO7" firstAttribute="top" secondItem="V6V-vl-6jO" secondAttribute="bottom" constant="75" id="piu-Jr-FBP"/>
                             <constraint firstItem="V6V-vl-6jO" firstAttribute="top" secondItem="Ew4-wV-7tH" secondAttribute="bottom" constant="71" id="pvJ-Ef-E6A"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="haQ-xi-eOG"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="7Pi-XO-UO7" id="QKs-UK-Buc"/>
                         <outlet property="closeButton" destination="MNZ-3D-FtD" id="imJ-KG-Rtl"/>
                         <outlet property="loginRegField" destination="DJD-51-Ysx" id="TC5-2u-FqN"/>
                         <outlet property="passwordRegField" destination="Ew4-wV-7tH" id="2aZ-oh-Qfc"/>
