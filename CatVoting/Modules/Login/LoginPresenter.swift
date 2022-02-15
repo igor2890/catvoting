@@ -13,6 +13,12 @@ class LoginPresenter: LoginPresenterProtocol{
     var interactor: LoginInteractorProtocol!
     var router: LoginRouterProtocol!
     
+    var login: String? {
+        get{
+            return interactor.getLogin()
+        }
+    }
+    
     init(with viewController: LoginViewControllerProtocol){
         self.viewController = viewController
     }
@@ -22,9 +28,7 @@ class LoginPresenter: LoginPresenterProtocol{
         viewController.setLoginFieldPlaceholder(with: "е-почта")
         viewController.setPasswordFieldPlaceholder(with: "пароль")
         viewController.setRegisterButtonTitle(with: "Зарегистрироваться")
-        if let login = interactor.getLogin() {
-            viewController.setLoginFieldTitle(with: login)
-        }
+        viewController.setLoginFieldTitle(with: login ?? "")
     }
     
     func loginTapped(email: String?, password: String?) {

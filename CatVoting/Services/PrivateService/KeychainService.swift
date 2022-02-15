@@ -10,11 +10,14 @@ import KeychainSwift
 
 class KeychainService: PrivateServiceProtocol{
     let keychain = KeychainSwift()
-    let keyLogin = "emailLogin"
-    let keyPassword = "password"
+    let keyLogin = "Igor2890.CatVoting.emailLogin"
+    let keyPassword = "Igor2890.CatVoting.password"
+    
+    init(){
+        keychain.synchronizable = true
+    }
     
     func save(login: String, password: String) {
-        keychain.synchronizable = true
         keychain.set(login, forKey: keyLogin)
         keychain.set(password, forKey: keyPassword)
     }
