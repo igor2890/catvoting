@@ -85,3 +85,5 @@ let election = Election(cats: cats, dateStart: Date())
 //Левусьен
 //Беляш ?
 //Касьян
+//Куся
+//Тимон

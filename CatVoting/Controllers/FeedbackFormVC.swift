@@ -65,8 +65,7 @@ class FeedbackFormVC: UIViewController, UITextFieldDelegate, UITextViewDelegate 
                 preferredStyle: .alert)
             let action = UIAlertAction(
                 title: "Ок",
-                style: .cancel,
-                handler: {_ in self.performSegue(withIdentifier: "unwindToMainAfterFeedback", sender: nil)})
+                style: .cancel)
             alert.addAction(action)
             present(alert, animated: true)
         }
@@ -97,16 +96,4 @@ class FeedbackFormVC: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
-        
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

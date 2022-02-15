@@ -23,7 +23,11 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
         configurator.configure(with: self)
         presenter.configureView()
         configureSubViews()
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        let recognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(hideKeyboard))
+        recognizer.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(recognizer)
     }
     
     @objc
@@ -78,6 +82,8 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
     
     @objc
     private func tapClose(){
+        
+        //перенести в презентер
         loginRegField.text = ""
         passwordRegField.text = ""
         presenter.closeViewTapped()

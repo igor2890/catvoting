@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="o6b-H7-gsr">
-                                <rect key="frame" x="31" y="291" width="352" height="314.5"/>
+                                <rect key="frame" x="31" y="324" width="352" height="248"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-EH-V0N">
                                         <rect key="frame" x="0.0" y="0.0" width="352" height="31.5"/>
@@ -124,33 +124,6 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </buttonConfiguration>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MQd-SE-Rub">
-                                        <rect key="frame" x="0.0" y="283" width="352" height="31.5"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cW3-Oc-NWQ">
-                                                <rect key="frame" x="0.0" y="0.5" width="20" height="30.5"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73c-AY-py0">
-                                                <rect key="frame" x="28" y="0.0" width="324" height="31.5"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted" titleAlignment="automatic">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Обратиться в КИК">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.2002437711" green="0.12649345400000001" blue="0.40242618320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="15" name="Helvetica"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <segue destination="ktC-ME-nea" kind="show" id="1Sg-PT-XKq"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -290,17 +263,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя (обязательно)" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="npu-sG-oae">
-                                <rect key="frame" x="52" y="138" width="310.5" height="34"/>
+                                <rect key="frame" x="52" y="94" width="310.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="continue" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="адрес электронной почты (обязательно)" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="vaa-NN-BoH">
-                                <rect key="frame" x="52" y="222" width="310.5" height="34"/>
+                                <rect key="frame" x="52" y="178" width="310.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="continue" textContentType="email"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kuF-vq-xAM">
-                                <rect key="frame" x="52" y="306" width="310.5" height="310.5"/>
+                                <rect key="frame" x="52" y="262" width="310.5" height="310.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kuF-vq-xAM" secondAttribute="height" multiplier="1:1" id="X6U-t5-PWb"/>
@@ -309,7 +282,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAM-Qn-aMM">
-                                <rect key="frame" x="138.5" y="666.5" width="137" height="35"/>
+                                <rect key="frame" x="138.5" y="622.5" width="137" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted">
                                     <attributedString key="attributedTitle">
@@ -343,6 +316,7 @@
                             <constraint firstItem="kuF-vq-xAM" firstAttribute="top" secondItem="vaa-NN-BoH" secondAttribute="bottom" constant="50" id="uYk-v0-RwN"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="fTk-f9-qy0"/>
                     <navigationItem key="navigationItem" title="Обратиться в КИК" id="naM-bV-Esq"/>
                     <connections>
                         <outlet property="emailTextField" destination="vaa-NN-BoH" id="4Jt-KL-hd8"/>
@@ -513,6 +487,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Kcv-cl-IEl" kind="relationship" relationship="viewControllers" id="Fjc-b7-agG"/>
+                        <segue destination="ktC-ME-nea" kind="relationship" relationship="viewControllers" id="zo9-TB-Yi4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBR-wr-Pd3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

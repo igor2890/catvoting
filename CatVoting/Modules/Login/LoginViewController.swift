@@ -26,9 +26,11 @@ class LoginController: UIViewController, LoginViewControllerProtocol {
         configurator.configure(with: self)
         presenter.configureView()
         configureSubViews()
-        scrollView.addGestureRecognizer(UITapGestureRecognizer(
-                                            target: self,
-                                            action: #selector(hideKeyboard)))
+        let recognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(hideKeyboard))
+        recognizer.cancelsTouchesInView = false
+        scrollView.addGestureRecognizer(recognizer)
     }
     
     //MARK: LoginViewControllerProtocol
