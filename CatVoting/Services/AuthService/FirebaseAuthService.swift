@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 
 class FirebaseAuthService: AuthServiceProtocol{
-    
+
     func register(email: String, password: String, completion: @escaping ((Result<String,CustomStringError>) -> Void)) {
         Auth.auth().createUser(withEmail: email, password: password) {
             authResult, error in
@@ -37,13 +37,21 @@ class FirebaseAuthService: AuthServiceProtocol{
         }
     }
     
+    func isAuthorized() -> Bool {
+        guard let _ = Auth.auth().currentUser else { return false }
+        return true
+    }
+    
     func isAccountVerified() -> Bool? {
         Auth.auth().currentUser?.isEmailVerified
     }
     
     func logout() {
-        
+        do {
+            try Auth.auth().signOut()
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
-    
     
 }

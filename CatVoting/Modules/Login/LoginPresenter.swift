@@ -23,12 +23,18 @@ class LoginPresenter: LoginPresenterProtocol{
         self.viewController = viewController
     }
 
-    func configureView() {
+    func viewLoaded() {
         viewController.setMainLabelTitle(with: "ДЛЯ ТЕХ, КТО\nХОЧЕТ ПРАВИТЬ\nМИРОМ И ХОЗЯИНОМ")
         viewController.setLoginFieldPlaceholder(with: "е-почта")
         viewController.setPasswordFieldPlaceholder(with: "пароль")
         viewController.setRegisterButtonTitle(with: "Зарегистрироваться")
         viewController.setLoginFieldTitle(with: login ?? "")
+    }
+    
+    func viewShown(){
+        if (interactor.isAuthorized()) {
+            router.goMainView()
+        }
     }
     
     func loginTapped(email: String?, password: String?) {

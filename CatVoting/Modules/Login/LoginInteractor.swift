@@ -30,4 +30,8 @@ class LoginInteractor: LoginInteractorProtocol{
         return privateService.getLogin()
     }
     
+    
+    func isAuthorized() -> Bool{
+        return authService.isAuthorized()
+    }
 }

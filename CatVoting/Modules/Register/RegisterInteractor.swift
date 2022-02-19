@@ -27,4 +27,13 @@ class RegisterInteractor: RegisterInteractorProtocol{
             }
         }
     }
+    
+    func loginAfterRegister() {
+        let email = privateService.getLogin() ?? ""
+        let password = privateService.getPassword() ?? ""
+        authService.login(email: email, password: password){
+            _ in
+        }
+    }
+    
 }

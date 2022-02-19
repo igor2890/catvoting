@@ -27,6 +27,7 @@ protocol RegisterViewControllerProtocol: AnyObject{
 protocol RegisterInteractorProtocol: AnyObject{
     var presenter: RegisterPresenterProtocol! {get set}
     
+    func loginAfterRegister()
     func register(email: String, password: String)
 }
 

@@ -24,7 +24,7 @@ class LoginController: UIViewController, LoginViewControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
-        presenter.configureView()
+        presenter.viewLoaded()
         configureSubViews()
         let recognizer = UITapGestureRecognizer(
             target: self,
@@ -85,6 +85,7 @@ class LoginController: UIViewController, LoginViewControllerProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        presenter.viewShown()
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.keyboardWasShown),

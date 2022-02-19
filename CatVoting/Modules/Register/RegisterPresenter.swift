@@ -51,6 +51,7 @@ class RegisterPresenter: RegisterPresenterProtocol{
     }
     
     func registerSuccessed() {
+        interactor.loginAfterRegister()
         registerState = SuccessRegistrationState(with: self)
         viewController.showOKAlert(
             title: "Зарегистрирован",

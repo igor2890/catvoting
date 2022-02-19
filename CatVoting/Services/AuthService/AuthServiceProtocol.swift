@@ -11,5 +11,7 @@ protocol AuthServiceProtocol{
     func register(email: String, password: String, completion: @escaping ((Result<String,CustomStringError>) -> Void))
     func login(email: String, password: String, completion: @escaping ((Result<String,CustomStringError>) -> Void))
     func logout()
+    
+    func isAuthorized() -> Bool
     func isAccountVerified() -> Bool?
 }

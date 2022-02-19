@@ -26,4 +26,7 @@ class KeychainService: PrivateServiceProtocol{
         return keychain.get(keyLogin)
     }
     
+    func getPassword() -> String? {
+        return keychain.get(keyPassword)
+    }
 }

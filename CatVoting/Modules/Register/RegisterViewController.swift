@@ -82,10 +82,6 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
     
     @objc
     private func tapClose(){
-        
-        //перенести в презентер
-        loginRegField.text = ""
-        passwordRegField.text = ""
         presenter.closeViewTapped()
     }
     

@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MainController: UIViewController {
+    
+    var authService: AuthServiceProtocol = FirebaseAuthService()
     
     @IBOutlet var versionLabel: UILabel!
     
@@ -25,9 +28,11 @@ class MainController: UIViewController {
         }
     }
     
-    @IBAction func unwindToMainVC(segue: UIStoryboardSegue) {
-
-        }
+    @IBAction func logoffTapped(_ sender: Any) {
+        authService.logout()
+        dismiss(animated: true)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

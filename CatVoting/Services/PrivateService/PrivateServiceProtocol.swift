@@ -10,4 +10,5 @@ import Foundation
 protocol PrivateServiceProtocol{
     func save(login: String, password: String)
     func getLogin() -> String?
+    func getPassword() -> String?
 }

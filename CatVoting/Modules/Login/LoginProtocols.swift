@@ -30,6 +30,7 @@ protocol LoginInteractorProtocol: AnyObject{
     
     func login(email: String, password: String)
     func getLogin() -> String?
+    func isAuthorized() -> Bool
 }
 
 protocol LoginPresenterProtocol: AnyObject{
@@ -37,7 +38,8 @@ protocol LoginPresenterProtocol: AnyObject{
     var interactor: LoginInteractorProtocol! {get set}
     var router: LoginRouterProtocol! {get set}
     
-    func configureView()
+    func viewLoaded()
+    func viewShown()
     func loginTapped(email: String?, password: String?)
     func registerTapped()
     func loginFails(message: String)
