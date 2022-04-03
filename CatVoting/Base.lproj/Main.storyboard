@@ -328,7 +328,7 @@
                             <constraint firstItem="kuF-vq-xAM" firstAttribute="top" secondItem="vaa-NN-BoH" secondAttribute="bottom" constant="50" id="uYk-v0-RwN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="fTk-f9-qy0"/>
+                    <tabBarItem key="tabBarItem" title="Обратная связь" image="envelope" catalog="system" id="fTk-f9-qy0"/>
                     <navigationItem key="navigationItem" title="Обратиться в КИК" id="naM-bV-Esq"/>
                     <connections>
                         <outlet property="emailTextField" destination="vaa-NN-BoH" id="4Jt-KL-hd8"/>
@@ -580,6 +580,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
+        <image name="envelope" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
